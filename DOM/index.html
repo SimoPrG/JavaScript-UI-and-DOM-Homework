@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documnet Object Model</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<ul id="tasks">
+    <li class="task">
+        <span class="heading">
+            Task 1
+        </span>
+
+        <div class="problem">
+            <ul>
+                Write a script that selects all the div nodes that are directly inside other div elements
+                <li>Create a function using querySelectorAll()</li>
+                <li>Create a function using getElementsByTagName()</li>
+            </ul>
+            <div>Inner div</div>
+            <ul>
+                <li>
+                    <div>Div in li</div>
+                </li>
+            </ul>
+            querySelectorAll() result:
+            <pre id="task1-querySelectorAll-result"></pre>
+            getElementsByTagName() result:
+            <pre id="task2-getElementsByTagName-result"></pre>
+        </div>
+    </li>
+    <li class="task">
+        <span class="heading">
+            Task 2
+        </span>
+
+        <div class="problem">
+            Create a function that gets the value of &lt;input type="text"&gt; ands prints its value to the console.
+            <input type="text" id="problem2-input-text"/>
+            <button id="problem2-button">Click!</button>
+            Please, open the console to see the result!
+        </div>
+    </li>
+    <li class="task"><span class="heading">Task 3</span>
+
+        <div class="problem">
+            Create a function that gets the value of &lt;input type="color"&gt; and sets the background of the body to this value.
+            <input type="color" id="input-color" value="#ffffff"/>
+        </div>
+    </li>
+    <li class="task"><span class="heading">Task 4</span>
+
+        <div class="problem">
+            *Write a script that shims querySelector and querySelectorAll in older browsers
+            <pre>
+if (!document.querySelectorAll) {
+  document.querySelectorAll = function (selectors) {
+    var style = document.createElement('style'), elements = [], element;
+    document.documentElement.firstChild.appendChild(style);
+    document._qsa = [];
+
+    style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+    window.scrollBy(0, 0);
+    style.parentNode.removeChild(style);
+
+    while (document._qsa.length) {
+      element = document._qsa.shift();
+      element.style.removeAttribute('x-qsa');
+      elements.push(element);
+    }
+    document._qsa = null;
+    return elements;
+  };
+}
+
+if (!document.querySelector) {
+  document.querySelector = function (selectors) {
+    var elements = document.querySelectorAll(selectors);
+    return (elements.length) ? elements[0] : null;
+  };
+}
+            </pre>
+        </div>
+    </li>
+</ul>
+<script src="query-selector-all.js"></script>
+<script src="get-elements-by-tag-name.js"></script>
+<script src="get-input-text.js"></script>
+<script src="change-body-background-color.js"></script>
+</body>
+</html>

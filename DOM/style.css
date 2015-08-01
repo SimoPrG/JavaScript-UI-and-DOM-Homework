@@ -1,0 +1,57 @@
+body,
+ul,
+li,
+div,
+span,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#tasks {
+  width: 800px;
+  margin: 0 auto;
+  list-style: none inside;
+  position: relative;
+}
+#tasks .task {
+  width: 25%;
+  float: left;
+  padding: 5px;
+  border: 3px solid #000;
+  border-right: 0;
+}
+#tasks .task:last-child {
+  border-right: 3px solid #000;
+}
+#tasks .task .problem {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 31px;
+  min-height: 460px;
+  border: 3px solid #000;
+}
+#tasks .task .problem div {
+  border: 3px solid #333;
+  text-align: center;
+}
+#tasks .task .problem > div {
+  color: #0f0;
+}
+#tasks .task .problem ul li div {
+  color: #f00;
+}
+#tasks .task .problem input {
+  display: block;
+}
+#tasks .task:hover {
+  background-color: #333;
+}
+#tasks .task:hover .heading {
+  text-decoration: underline;
+}
+#tasks .task:hover .problem {
+  display: block;
+}
