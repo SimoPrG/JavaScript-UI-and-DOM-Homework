@@ -26,7 +26,13 @@ function solve() {
 
     function toggleContentDisplay(ev) {
         var button = ev.target,
-            content = button.nextElementSibling;
+            content;
+
+        if (!button.classList.contains('button')) {
+            return;
+        }
+
+        content= button.nextElementSibling;
 
         while (content) {
             if (content.classList.contains('content')) {
@@ -70,4 +76,4 @@ function solve() {
     };
 }
 
-//module.exports = solve;
+module.exports = solve;
