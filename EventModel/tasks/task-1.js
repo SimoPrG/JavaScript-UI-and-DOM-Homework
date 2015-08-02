@@ -8,7 +8,7 @@
  */
 
 function solve() {
-    function validateIfHTMLElement(element) {
+    function validateIfHtmlElement(element) {
         if (!(element instanceof HTMLElement)) {
             throw new TypeError('element must be an HTMLElement or existing HTMLElement id');
         }
@@ -28,18 +28,18 @@ function solve() {
         var button = ev.target,
             content;
 
-        if (!button.classList.contains('button')) {
+        if (button.className !== 'button') {
             return;
         }
 
         content= button.nextElementSibling;
 
         while (content) {
-            if (content.classList.contains('content')) {
+            if (content.className === 'content') {
                 break;
             }
 
-            if (content.classList.contains('button')) {
+            if (content.className === 'button') {
                 return;
             }
 
@@ -68,11 +68,11 @@ function solve() {
             element = selector;
         }
 
-        validateIfHTMLElement(element);
+        validateIfHtmlElement(element);
 
         changeInnerHtmlOfChildrenWithClass(element, 'button', 'hide');
 
-        element.addEventListener('click', toggleContentDisplay, false)
+        element.addEventListener('click', toggleContentDisplay, false);
     };
 }
 
