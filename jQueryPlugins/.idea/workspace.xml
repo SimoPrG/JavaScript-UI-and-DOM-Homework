@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b511caa-22fc-4f21-bdc8-804d4953e584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jQueryPlugins_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jQueryPlugins.iml" afterPath="$PROJECT_DIR$/.idea/jQueryPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/task-1.js" afterPath="$PROJECT_DIR$/tasks/task-1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../EventModel/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../EventModel/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2b511caa-22fc-4f21-bdc8-804d4953e584" name="Default" comment="" />
     <ignored path="jQueryPlugins.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -163,7 +156,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EventModel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HtmlTemplates" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
