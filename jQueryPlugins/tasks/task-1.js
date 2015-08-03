@@ -1,7 +1,7 @@
-function solve(){
-  return function(selector){
-    
-  };
+function solve() {
+    return function (selector) {
+
+    };
 }
 
 module.exports = solve;
