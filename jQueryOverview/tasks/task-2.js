@@ -1,3 +1,4 @@
+//@formatter:off
 /* globals $ */
 
 /*
@@ -17,10 +18,70 @@ Create a function that takes a selector and:
   * The provided ID is not a **jQuery object** or a `string` 
 
 */
+//@formatter:on
 function solve() {
-  return function (selector) {
-    
-  };
-};
+    function validateIfString(string) {
+        if (typeof string !== 'string') {
+            throw new Error('selector must be a string');
+        }
+    }
+
+    function validateIfSelected($element) {
+        if ($element.length === 0) {
+            throw new Error('nothing is selected');
+        }
+    }
+
+    function toggleContentDisplay(ev) {
+        var button = ev.target,
+            content;
+
+        if (button.className !== 'button') {
+            return;
+        }
+
+        content= button.nextElementSibling;
+
+        while (content) {
+            if (content.className === 'content') {
+                break;
+            }
+
+            if (content.className === 'button') {
+                return;
+            }
+
+            content = content.nextElementSibling;
+        }
+
+        if (!content) {
+            return;
+        }
+
+        if (content.style.display === '') {
+            content.style.display = 'none';
+            button.innerHTML = 'show';
+        } else if (content.style.display === 'none') {
+            content.style.display = '';
+            button.innerHTML = 'hide';
+        }
+    }
+
+    return function (selector) {
+        var $element,
+            $button;
+
+        validateIfString(selector);
+
+        $element = $(selector);
+
+        validateIfSelected($element);
+
+        $button = $element.find('.button');
+        $button.html('hide');
+
+        $element.on('click', '.button', toggleContentDisplay);
+    };
+}
 
 module.exports = solve;
