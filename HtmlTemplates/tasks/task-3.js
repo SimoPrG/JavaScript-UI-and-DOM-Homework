@@ -3,8 +3,7 @@ function solve() {
         $.fn.listview = function (data) {
             var i,
                 len,
-                $this = $(this),
-                templateId = $this.data('template'),
+                templateId = this.data('template'),
                 templateText = $('#' + templateId).html(),
                 template = handlebars.compile(templateText),
                 templateResult = '';
@@ -13,9 +12,9 @@ function solve() {
                 templateResult += template(data[i]);
             }
 
-            $this.html(templateResult);
+            this.html(templateResult);
 
-            return $this;
+            return this;
         };
     };
 }
